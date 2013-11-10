@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+    <bean id="HelloWorldAction" class="com.es.sewge.protocal.action.HelloWorldAction" scope="prototype"></bean>
+    <bean id="SubunitClassifyAction" class="com.es.sewage.protocal.action.SubunitClassifyAction" scope="prototype">
+        <property name="subunitClassifyService" ref="subunitClassifyService" />
+    </bean>
+    <bean id="SubunitAction" class="com.es.sewage.protocal.action.SubunitAction" scope="prototype">
+        <property name="subutilService" ref="subunitService" />
+        <property name="subunitClassifyService" ref="subunitClassifyService" />
+    </bean>
+    <bean id="ProtocalAction" class="com.es.sewage.protocal.action.ProtocalAction" scope="prototype">
+        <property name="protocalService" ref="protocalService" />
+        <property name="subunitClassifyService" ref="subunitClassifyService" />
+        <property name="subunitService" ref="subunitService"></property>
+    </bean>
+    
+    <bean id="CompanyAction" class="com.es.sewage.user.action.CompanyAction" scope="prototype">
+        <property name="companyService" ref="companyService" />
+    </bean>
+    
+    <bean id="UserAction" class="com.es.sewage.user.action.UserAction" scope="prototype">
+        <property name="companyService" ref="companyService" />
+        <property name="userService" ref="userService" />
+    </bean>
+    
+    <bean id="LoginAction" class="com.es.sewage.sys.action.LoginAction" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="companyService" ref="companyService" />
+    </bean>
+
+    <bean id="StatusMapAction" class="com.es.sewage.status.action.StatusMapAction" scope="prototype">
+    </bean>
+    
+    <bean id="TestAPIAction" class="com.es.sewage.API.TestAPIAction" scope="prototype"></bean>
+</beans>

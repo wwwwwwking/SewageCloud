@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd 
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+    <!-- protocal service -->
+    <bean id="subunitClassifyService" class="com.es.sewage.protocal.service.impl.SubunitClassifyServiceImpl">
+		<constructor-arg index="0" ref="subunitClassifyDao"/>
+	</bean>
+	
+    <bean id="subunitService" class="com.es.sewage.protocal.service.impl.SubunitServiceImpl">
+		<constructor-arg index="0" ref="subunitDao"/>
+	</bean>
+	
+    <bean id="protocalService" class="com.es.sewage.protocal.service.impl.ProtocalServiceImpl">
+		<constructor-arg index="0" ref="protocalDao"/>
+	</bean>
+	
+    <bean id="companyService" class="com.es.sewage.user.service.impl.CompanyServiceImpl">
+		<constructor-arg index="0" ref="companyDao"/>
+	</bean>
+	
+    <bean id="userService" class="com.es.sewage.user.service.impl.UserServiceImpl">
+		<constructor-arg index="0" ref="userDao"/>
+	</bean>
+	<!-- end of protocal service -->
+
+    <!--  
+	<bean id="userService" class="com.sento.service.impl.UserServiceImpl"></bean>
+	<bean id="bulletingService" class="com.sento.service.impl.BulletingServiceImpl"></bean>
+	<bean id="practiceService" class="com.sento.service.impl.PracticeServiceImpl"></bean>
+	<bean id="commentService" class="com.sento.service.impl.CommentServiceImpl"></bean>
+	<bean id="stuRPService" class="com.sento.service.impl.StuRPServiceImpl"></bean>
+	<bean id="sportsService" class="com.sento.service.impl.SportsServiceImpl"></bean>
+	<bean id="courseArrgService" class="com.sento.service.impl.CourseArrgServiceImpl"></bean>
+	<bean id="homeworkService" class="com.sento.service.impl.HomeworkServiceImpl"></bean>
+	<bean id="homeworkResultService" class="com.sento.service.impl.HomeworkResultServiceImpl"></bean>
+	<bean id="examService" class="com.sento.service.impl.ExamServiceImpl"></bean>
+	<bean id="studentInfoService" class="com.sento.service.impl.StuInfoServiceImpl"></bean>
+	<bean id="parentInfoService" class="com.sento.service.impl.ParentInfoServiceImpl"></bean>
+	<bean id="passwordService" class="com.sento.service.impl.PasswordServiceImpl"></bean>
+	<bean id="examResultService" class="com.sento.service.impl.ExamResultServiceImpl"></bean>
+	<bean id="statisticsService" class="com.sento.service.impl.StatisticsServiceImpl"></bean>
+	-->
+	<!-- 图像 -->
+	<!--  
+	<bean id="jfreeChartService" class="com.sento.service.impl.JfreeChartServiceImpl"></bean>
+	<bean id="fxService" class="com.sento.service.impl.FXServiceImpl"></bean>
+	-->
+</beans>

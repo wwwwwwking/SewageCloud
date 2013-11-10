@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="do" />
+	
+	<package name="struts2" extends="struts-default" namespace="/hello">
+	    <action name="hello" class="HelloWorldAction" method="helloWorld">
+			<result name="success" type="redirect">/web/index.jsp</result>
+		</action>
+	</package>
+	
+	
+	<package name="api" extends="struts-default" namespace="/api">
+		<!-- API接口 -->
+		 <action name="testAction" class="TestAPIAction" method="test">
+	        <result name="success" type="redirect">/web/API/apiresult.jsp</result>
+	    </action>
+	</package>
+	
+	<package name="sys" extends="struts-default" namespace="/sys">
+	    <!-- 用户登录功能 -->
+	    <action name="gotoLogin" class="LoginAction" method="gotoLogin">
+	        <result name="success" type="redirect">/login.jsp</result>
+	    </action>
+	    <action name="doLogin" class="LoginAction" method="doLogin">
+	        <result name="success" type="redirect">/web/index.jsp</result>
+	        <result name="error" type="redirect">/login.jsp</result>
+	    </action>
+	    <action name="doLogout" class="LoginAction" method="doLogout">
+	        <result name="success" type="redirect">/login.jsp</result>
+	    </action>
+	</package>
+	
+	<package name="user" extends="struts-default" namespace="/user">
+	    <!-- 公司名称 -->
+	    <action name="addCompany" class="CompanyAction" method="add">
+	        <result name="success" type="redirect">/user/listCompany.do</result>
+	        <result name="error" type="redirect">/web/user/companydetail.jsp</result>
+	    </action>
+	    <action name="editCompany" class="CompanyAction" method="edit">
+	        <result name="success" type="redirect">/web/user/companyupdate.jsp</result>
+	    </action>
+	    <action name="updateCompany" class="CompanyAction" method="update">
+	        <result name="success" type="redirect">/user/listCompany.do</result>
+	    </action>
+	    <action name="listCompany" class="CompanyAction" method="list">
+	        <result name="success" type="redirect">/web/user/companylist.jsp</result>
+	    </action>
+	    <action name="deleteCompany" class="CompanyAction" method="delete">
+	        <result name="success" type="redirect">/user/listCompany.do</result>
+	    </action> 
+	    
+	    <!-- 用户信息 -->
+	    <action name="createUser" class="UserAction" method="create">
+	        <result name="success" type="redirect">/web/user/userdetail.jsp</result>
+	    </action>
+	    <action name="addUser" class="UserAction" method="add">
+	        <result name="success" type="redirect">/user/listUser.do</result>
+	        <result name="error" type="redirect">/web/user/userdetail.jsp</result>
+	    </action>
+	    <action name="editUser" class="UserAction" method="edit">
+	        <result name="success" type="redirect">/web/user/userupdate.jsp</result>
+	    </action>
+	    <action name="updateUser" class="UserAction" method="update">
+	        <result name="success" type="redirect">/user/listUser.do</result>
+	    </action>
+	    <action name="listUser" class="UserAction" method="list">
+	        <result name="success" type="redirect">/web/user/userlist.jsp</result>
+	    </action>
+	    <action name="deleteUser" class="UserAction" method="delete">
+	        <result name="success" type="redirect">/user/listUser.do</result>
+	    </action> 
+	</package>
+	
+	<package name="protocal" extends="struts-default" namespace="/protocal">
+	    <!-- 类别 -->
+	    <action name="addSubunitClassify" class="SubunitClassifyAction" method="add">
+			<result name="success" type="redirect">/protocal/listSubunitClassify.do</result>
+			<result name="error" type="redirect">/web/protocal/subunitclassifydetail.jsp</result>
+		</action>
+		<action name="listSubunitClassify" class="SubunitClassifyAction" method="list">
+			<result name="success" type="redirect">/web/protocal/subunitclassifylist.jsp</result>
+		</action>
+		<action name="editSubunitClassify" class="SubunitClassifyAction" method="edit">
+			<result name="success" type="redirect">/web/protocal/subunitclassifyupdate.jsp</result>
+		</action>
+		<action name="updateSubunitClassify" class="SubunitClassifyAction" method="update">
+			<result name="success" type="redirect">/protocal/listSubunitClassify.do</result>
+			<result name="error" type="redirect">/protocal/listSubunitClassify.do</result>
+		</action>
+		<action name="deleteSubunitClassify" class="SubunitClassifyAction" method="delete">
+			<result name="success" type="redirect">/protocal/listSubunitClassify.do</result>
+		</action>
+		<!-- 型号 -->
+		<action name="createSubunit" class="SubunitAction" method="create">
+		    <result name="success" type="redirect">/web/protocal/subunitdetail.jsp</result>
+		</action>
+		<action name="addSubunit" class="SubunitAction" method="add">
+		    <result name="success" type="redirect">/protocal/listSubunit.do</result>
+		</action>
+		<action name="listSubunit" class="SubunitAction" method="list">
+		    <result name="success" type="redirect">/web/protocal/subunitlist.jsp</result>
+		</action>
+		<action name="editSubunit" class="SubunitAction" method="edit">
+		   	<result name="success" type="redirect">/web/protocal/subunitupdate.jsp</result>
+		</action>
+		<action name="updateSubunit" class="SubunitAction" method="update">
+		    <result name="success" type="redirect">/protocal/listSubunit.do</result>
+		</action>
+		<action name="deleteSubunit" class="SubunitAction" method="delete">
+		    <result name="success" type="redirect">/protocal/listSubunit.do</result>
+		</action>
+		
+		<!-- 协议 -->
+		<action name="listProtocal" class="ProtocalAction" method="list">
+			<result name="success" type="redirect">/web/protocal/protocallist.jsp</result>	    
+		</action>
+		<action name="saveProtocal" class="ProtocalAction" method="save">
+			<result name="success" type="redirect">/protocal/listProtocal.do</result>
+			<result name="error" type="redirect">/web/protocal/protocalcachedlist.jsp</result>	    
+		</action>
+		<action name="deleteProtocal" class="ProtocalAction" method="delete">
+			<result name="success" type="redirect">/protocal/listProtocal.do</result>	    
+		</action>
+		
+		<action name="initCachedProtocal" class="ProtocalAction" method="cacheInit">
+		    <result name="success" type="redirect">/web/protocal/protocalcachedlist.jsp</result>
+		</action>
+		<action name="listCachedProtocal" class="ProtocalAction" method="cacheList">
+		    <result name="success" type="redirect">/web/protocal/protocalcachedlist.jsp</result>
+		</action>
+		<action name="addCachedProtocal" class="ProtocalAction" method="cacheAdd">
+		    <result name="success" type="redirect">/protocal/listCachedProtocal.do</result>
+		</action>
+		<action name="deleteCachedProtocal" class="ProtocalAction" method="cacheDelete">
+		    <result name="success" type="redirect">/protocal/listCachedProtocal.do</result>
+		</action>
+	</package>
+	
+	<package name="status" extends="struts-default" namespace="/status">
+	    <action name="preLoadStatusMap" class="StatusMapAction" method="preLoad">
+			<result name="success" type="redirect">/web/status/spotmap.jsp</result>
+		</action>
+	</package>
+</struts>

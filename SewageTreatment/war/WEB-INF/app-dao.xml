@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+    <bean id="baseDao" class="com.es.sewage.core.dao.BaseDaoImpl"></bean>
+    <bean id="subunitClassifyDao" class="com.es.sewage.protocal.dao.impl.SubunitClassifyDaoImpl"></bean>
+    <bean id="protocalDao" class="com.es.sewage.protocal.dao.impl.ProtocalDaoImpl"></bean>
+    <bean id="subunitDao" class="com.es.sewage.protocal.dao.impl.SubunitDaoImpl"></bean>
+    <bean id="userDao" class="com.es.sewage.user.dao.impl.UserDaoImpl"></bean>
+    <bean id="companyDao" class="com.es.sewage.user.dao.impl.CompanyDaoImpl"></bean>
+</beans>

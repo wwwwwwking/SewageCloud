@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="jslib/jquery-1.9.1.js"></script>
+		<style type="text/css">
+		body {
+			background:#CCCCCC;
+			font-size:12px;
+			font-family:"微软雅黑","宋体";
+		}
+		
+		#header {
+			margin: 0px auto;
+			width: 1000px;
+			height: 100px;
+			border: 1px solid #666666;
+		}
+		
+		#logo {
+			margin: 10px;
+			width: 220px;
+		}
+		
+		.logoimg {
+			display:block;
+			width: 200px;
+			height: 60px;
+		}
+		
+		.logoinfo {
+			display: block;
+			width: 200;
+			text-align:left;
+		}
+		
+		#info {
+			float:right;
+			margin: 10px;
+			text-align:right;
+		}
+		
+		#basic {
+			height: 18px;
+		}
+		#menu {
+			margin-top: 8px;
+			float:right;
+		}
+		
+		.menuimg {
+			position:absolute;
+			margin: 4px;
+			width: 30px;
+			height: 30px;
+			display: block;
+			cursor: pointer;
+		}
+				
+		.menudesc {
+			text-align: center;
+		}
+		
+		#menu ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		#menu ul li {
+			float: left;
+			width: 80px;
+			text-align:center;
+		}
+		
+		#menuimg-outer {
+			width: 40px;
+			height: 40px;
+			margin-left: 22px;
+			margin-right: 20px;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="info">
+				<div id="basic">当前用户: jd-admin, <span><a href="javascript:void(0);"> 退出登录 </a></span></div>
+				
+				<script type="text/javascript">
+				$(function() {
+					$(".menuimg").click(function() {
+						$(this).clone().appendTo($(this).parent());
+						$(this).siblings().animate({margin:"-=5",width:"+=10",height:"+=10",opacity: "0"},500,function(){
+							$(this).remove();
+						});
+					});
+				});
+				
+				function onHref(page) {
+					switch (page) {
+						case 0:
+							window.location.href="http://www.baidu.com/";
+							break;
+						case 1:
+							window.location.href="http://www.google.com/";
+							break;
+					}
+				};
+				</script>
+				
+				<div id="menu">
+					<ul>
+						<li>
+							<div id="menuimg-outer">
+								<img src="img/menu1.png" class="menuimg" onClick="javascript:onHref(0);" />
+							</div>
+							<span class="menudesc"> 监控状态 </span>
+						</li>
+						<li>
+							<div id="menuimg-outer">
+								<img src="img/menu2.png" class="menuimg" />
+							</div>
+							<span class="menudesc"> 历史数据 </span>
+						</li>
+						<li>
+							<div id="menuimg-outer">
+								<img src="img/menu3.png" class="menuimg" />
+							</div>
+							<span class="menudesc"> 报表分析 </span>
+						</li>
+						<li>
+							<div id="menuimg-outer">
+								<img src="img/menu4.png" class="menuimg" />
+							</div>
+							<span class="menudesc"> 系统设置 </span>
+						</li>
+						<li>
+							<div id="menuimg-outer">
+								<img src="img/menu5.png" class="menuimg" />
+							</div>
+							<span class="menudesc"> 计费信息 </span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="logo"> 
+				<img class="logoimg" src="img/logo.png" />
+				<span class="logoinfo">江大污水处理厂 -- 污水处理云平台</span>
+			</div>	
+		</div>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <!-- servlet配置 -->
+    <servlet>
+   		<servlet-name>TestServlet</servlet-name>
+	    <servlet-class>com.es.sewage.API.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>TestServlet</servlet-name>
+	    <url-pattern>/API/test.what</url-pattern>
+	</servlet-mapping>
+    
+    
+    <!-- Spring配置 -->
+    <context-param>
+
+        <param-name>
+			contextConfigLocation
+        </param-name>
+
+        <param-value>
+			/WEB-INF/app-context.xml
+        </param-value>
+    </context-param>
+
+    <listener>
+
+        <listener-class>
+			org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <!-- struts 2 配置 -->
+
+    <filter>
+
+        <filter-name>
+			struts2-gae
+        </filter-name>
+
+        <filter-class>
+			com.struts2.gae.dispatcher.GaeFilterDispatcher
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+
+        <filter-name>
+			struts2-gae
+        </filter-name>
+
+        <url-pattern>
+			/*
+        </url-pattern>
+    </filter-mapping>
+
+   
+    <listener>
+
+        <listener-class>
+			com.struts2.gae.listener.OgnlListener
+        </listener-class>
+    </listener>
+
+    <welcome-file-list>
+
+        <welcome-file>
+			index.html
+        </welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+
+        <servlet-name>
+			SystemServiceServlet
+        </servlet-name>
+
+        <servlet-class>
+			com.google.api.server.spi.SystemServiceServlet
+        </servlet-class>
+
+        <init-param>
+
+            <param-name>
+				services
+            </param-name>
+
+            <param-value/>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+
+        <servlet-name>
+SystemServiceServlet
+        </servlet-name>
+
+        <url-pattern>
+/_ah/spi/*
+        </url-pattern>
+    </servlet-mapping>
+ <servlet>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+  <init-param>
+   <param-name>services</param-name>
+   <param-value/>
+  </init-param>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <url-pattern>/_ah/spi/*</url-pattern>
+ </servlet-mapping>
+</web-app>

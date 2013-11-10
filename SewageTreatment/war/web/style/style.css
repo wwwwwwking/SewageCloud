@@ -1,0 +1,130 @@
+@CHARSET "UTF-8";
+body {
+	margin: 0;
+	background-color: #F2F2F2;
+	color: #464646;
+}
+
+body,ul,ol,form {
+	padding: 0;
+}
+
+.bgt {
+	background: url("/web/img/indexbg.png") repeat-x scroll 0 0 transparent;
+}
+
+.mid {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+}
+
+.left_f {
+	float: left;
+}
+
+.right_f {
+	float: right;
+}
+
+.header {
+	width: 960px;
+	height: 61px;
+	display: block;
+}
+
+.menu {
+	padding-top: 25px;
+}
+
+.fl-li {
+	list-style: none outside none;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.fl-li li {
+	float: left;
+	margin: 3px;
+}
+
+.fl-li li a {
+	color: #0B739B;
+	display: block;
+	line-height: 28px;
+	padding: 0;
+	text-decoration: none;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.fl-li li a:hover {
+	background-color: #6EB1EB;
+	border-radius: 4px 4px 4px 4px;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.active {
+	background-color: #6EB1EB;
+	border-radius: 4px 4px 4px 4px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+.span30 {
+	margin-top: 30px;
+}
+
+.ac-bg {
+	background: url(/web/img/lg_bg.png) no-repeat;
+}
+
+.ac-t {
+	background-position: 0 0;
+	height: 10px;
+}
+
+.ac-b {
+	background-position: 0 -30px;
+	height: 25px;
+}
+
+.ac-m {
+	background: url(/web/img/lg_bgs.png) repeat-y;
+	min-height: 350px;
+	_height: 350px;
+}
+
+.ac-chk {
+	vertical-align: middle;
+	margin-top: -1px;
+}
+
+.login-m {
+	padding-right: 50px;
+	width: 300px;
+}
+
+.login-img {
+	padding-right: 60px;
+	border-right: 1px solid #ccc;
+}
+
+.login-container {
+	margin: 30px 25px 0 0;
+	width: 360px;
+}
+
+.footer {
+	color:#999999;
+	font-family:Tahoma; 
+	font-size:9px;
+}
+
+.footer a {
+	text-decoration: none;
+	color:#999999;
+}
